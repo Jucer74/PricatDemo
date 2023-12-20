@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricatMVC", "PricatMVC.csproj", "{869ECE3B-72BA-40F4-9322-B69333560A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricatMVC.App", "PricatMVC.App.csproj", "{869ECE3B-72BA-40F4-9322-B69333560A89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{425686A9-CA37-45CB-9744-9D50C564CF19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{3D239BCF-76E1-4AD8-B2B0-05C18E672DD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{869ECE3B-72BA-40F4-9322-B69333560A89} = {425686A9-CA37-45CB-9744-9D50C564CF19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3C676E7-D854-461B-BC93-0662FFC44920}
