@@ -1,0 +1,1373 @@
+{
+  "users": [
+    { 
+      "id": 1, 
+      "userEmail": "admin@email.com",
+      "firstName": "Admin", 
+      "lastName": "User",
+      "password": "P4ssw0rd*01"
+    },
+    { 
+      "id": 2, 
+      "userEmail": "superuser@email.com",
+      "firstName": "Super", 
+      "lastName": "User",
+      "password": "Sup3rUs3r"
+    },
+    { 
+      "id": 3, 
+      "userEmail": "jucer74@hotmail.com",
+      "firstName": "Julio", 
+      "lastName": "Robles",
+      "password": "P4ssw0rd"
+    }
+  ],   
+  "categories": [
+    {
+      "id": 1,
+      "description": "Alimentos"
+    },
+    {
+      "id": 2,
+      "description": "Bebidas"
+    },
+    {
+      "id": 3,
+      "description": "Productos de Aseo"
+    },
+    {
+      "id": 4,
+      "description": "Ropa"
+    },
+    {
+      "id": 5,
+      "description": "Medicamentos"
+    },
+    {
+      "id": 6,
+      "description": "Herramientas"
+    },
+    {
+      "id": 7,
+      "description": "Frutas"
+    },
+    {
+      "id": 8,
+      "description": "Joyeria"
+    },
+    {
+      "id": 9,
+      "description": "Tecnologia"
+    },
+    {
+      "id": 10,
+      "description": "Jugueteria"
+    },
+    {
+      "id": 11,
+      "description": "Mascotas"
+    },
+    {
+      "id": 12,
+      "description": "Zapatos"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248000429",
+      "description": "Leche",
+      "price": 3750,
+      "unit": "Litro"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248005868",
+      "description": "Pan",
+      "price": 5500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248015607",
+      "description": "Arroz",
+      "price": 4500,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248023831",
+      "description": "Frijoles",
+      "price": 3000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248027082",
+      "description": "Huevos",
+      "price": 18000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248028539",
+      "description": "Carne de res",
+      "price": 15000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 7,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248031553",
+      "description": "Pollo",
+      "price": 12000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 8,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248032444",
+      "description": "Atún enlatado",
+      "price": 11000,
+      "unit": "Lata"
+    },
+    {
+      "id": 9,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248034080",
+      "description": "Queso",
+      "price": 7500,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 10,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248034707",
+      "description": "Yogur",
+      "price": 6500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 11,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248036640",
+      "description": "Cebolla",
+      "price": 950,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 12,
+      "categoryId": 1,
+      "categoryName": "Alimentos",
+      "eanCode": "7707248039832",
+      "description": "Tomate",
+      "price": 1200,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 13,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248044249",
+      "description": "Agua mineral",
+      "price": 2500,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 14,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248045529",
+      "description": "Refresco de cola",
+      "price": 3700,
+      "unit": "Botella (600 ml)"
+    },
+    {
+      "id": 15,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248052329",
+      "description": "Jugo de naranja",
+      "price": 3500,
+      "unit": "Botella (1 litro)"
+    },
+    {
+      "id": 16,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248066999",
+      "description": "Té helado",
+      "price": 2000,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 17,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248068504",
+      "description": "Limonada",
+      "price": 1500,
+      "unit": "Vaso (350 ml)"
+    },
+    {
+      "id": 18,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248074710",
+      "description": "Café",
+      "price": 1000,
+      "unit": "Taza (250 ml)"
+    },
+    {
+      "id": 19,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248087246",
+      "description": "Cerveza",
+      "price": 6500,
+      "unit": "Botella (355 ml)"
+    },
+    {
+      "id": 20,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248092295",
+      "description": "Vino tinto",
+      "price": 25000,
+      "unit": "Botella (750 ml)"
+    },
+    {
+      "id": 21,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248095814",
+      "description": "Licor de ron",
+      "price": 35000,
+      "unit": "Botella (750 ml)"
+    },
+    {
+      "id": 22,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248102482",
+      "description": "Whisky",
+      "price": 65000,
+      "unit": "Botella (750 ml)"
+    },
+    {
+      "id": 23,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248103717",
+      "description": "Refresco de naranja",
+      "price": 1800,
+      "unit": "Botella (600 ml)"
+    },
+    {
+      "id": 24,
+      "categoryId": 2,
+      "categoryName": "Bebidas",
+      "eanCode": "7707248105186",
+      "description": "Agua con gas",
+      "price": 3200,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 25,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248113426",
+      "description": "Papel higiénico",
+      "price": 6250,
+      "unit": "Rollo (4 unidades)"
+    },
+    {
+      "id": 26,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248113846",
+      "description": "Jabón de tocador",
+      "price": 12500,
+      "unit": "Barra (100 g)"
+    },
+    {
+      "id": 27,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248118216",
+      "description": "Desodorante",
+      "price": 8900,
+      "unit": "Unidad"
+    },
+    {
+      "id": 28,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248132236",
+      "description": "Champú",
+      "price": 13200,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 29,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248135794",
+      "description": "Acondicionador",
+      "price": 12100,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 30,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248143522",
+      "description": "Crema dental",
+      "price": 14000,
+      "unit": "Tubo (120 g)"
+    },
+    {
+      "id": 31,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248144635",
+      "description": "Enjuague bucal",
+      "price": 23000,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 32,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248159844",
+      "description": "Toallas femeninas",
+      "price": 9500,
+      "unit": "Paquete (10 unidades)"
+    },
+    {
+      "id": 33,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248160048",
+      "description": "Papel absorbente",
+      "price": 12500,
+      "unit": "Rollo (50 hojas)"
+    },
+    {
+      "id": 34,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248162400",
+      "description": "Detergente para ropa",
+      "price": 16250,
+      "unit": "Botella (1 litro)"
+    },
+    {
+      "id": 35,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248166903",
+      "description": "Suavizante de telas",
+      "price": 1530,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 36,
+      "categoryId": 3,
+      "categoryName": "Productos de Aseo",
+      "eanCode": "7707248169331",
+      "description": "Limpiador multiusos",
+      "price": 8600,
+      "unit": "Botella (500 ml)"
+    },
+    {
+      "id": 37,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248170443",
+      "description": "Camisa de algodón",
+      "price": 25000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 38,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248173628",
+      "description": "Pantalón de mezclilla",
+      "price": 30000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 39,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248179002",
+      "description": "Camiseta",
+      "price": 15000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 40,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248186444",
+      "description": "Vestido",
+      "price": 40000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 41,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248187762",
+      "description": "Blusa",
+      "price": 20000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 42,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248194784",
+      "description": "Falda",
+      "price": 25000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 43,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248196207",
+      "description": "Traje de baño",
+      "price": 35000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 44,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248197983",
+      "description": "Calcetines",
+      "price": 5000,
+      "unit": "Par"
+    },
+    {
+      "id": 45,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248198935",
+      "description": "Zapatos deportivos",
+      "price": 50000,
+      "unit": "Par"
+    },
+    {
+      "id": 46,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248201567",
+      "description": "Chaqueta de cuero",
+      "price": 100000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 47,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248202274",
+      "description": "Gorra",
+      "price": 10000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 48,
+      "categoryId": 4,
+      "categoryName": "Ropa",
+      "eanCode": "7707248202854",
+      "description": "Pantuflas",
+      "price": 15000,
+      "unit": "Par"
+    },
+    {
+      "id": 49,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248205671",
+      "description": "Paracetamol",
+      "price": 1300,
+      "unit": "Caja (10 tabs de 500 mg)"
+    },
+    {
+      "id": 50,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248206906",
+      "description": "Ibuprofeno",
+      "price": 14000,
+      "unit": "Caja (20 tabs de 400 mg)"
+    },
+    {
+      "id": 51,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248211078",
+      "description": "Aspirina",
+      "price": 12500,
+      "unit": "Caja (30 tabs de 500 mg)"
+    },
+    {
+      "id": 52,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248211306",
+      "description": "Loratadina",
+      "price": 15000,
+      "unit": "Caja (10 tabs de 10 mg)"
+    },
+    {
+      "id": 53,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248215472",
+      "description": "Dipirona",
+      "price": 2000,
+      "unit": "Caja (20 tabs de 500 mg)"
+    },
+    {
+      "id": 54,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248232608",
+      "description": "Omeprazol",
+      "price": 6000,
+      "unit": "Caja (14 cáps de 20 mg)"
+    },
+    {
+      "id": 55,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248237528",
+      "description": "Amoxicilina",
+      "price": 8000,
+      "unit": "Caja (20 cáps de 500 mg)"
+    },
+    {
+      "id": 56,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248240269",
+      "description": "Paroxetina",
+      "price": 10000,
+      "unit": "Caja (30 tabs de 20 mg)"
+    },
+    {
+      "id": 57,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248249927",
+      "description": "Metformina",
+      "price": 4500,
+      "unit": "Caja (30 tabs de 850 mg)"
+    },
+    {
+      "id": 58,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248250978",
+      "description": "Atorvastatina",
+      "price": 12000,
+      "unit": "Caja (30 tabs de 10 mg)"
+    },
+    {
+      "id": 59,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248251173",
+      "description": "Vitamina C",
+      "price": 3500,
+      "unit": "Caja (30 tabs de 500 mg)"
+    },
+    {
+      "id": 60,
+      "categoryId": 5,
+      "categoryName": "Medicamentos",
+      "eanCode": "7707248252903",
+      "description": "Clorfenamina",
+      "price": 3000,
+      "unit": "Caja (10 tabs de 4 mg)"
+    },
+    {
+      "id": 61,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248259735",
+      "description": "Martillo",
+      "price": 32000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 62,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248269062",
+      "description": "Destornillador",
+      "price": 13500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 63,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248272253",
+      "description": "Taladro",
+      "price": 50000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 64,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248284980",
+      "description": "Sierra circular",
+      "price": 70000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 65,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248290462",
+      "description": "Llave inglesa",
+      "price": 8000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 66,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248291223",
+      "description": "Pinzas",
+      "price": 4000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 67,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248292831",
+      "description": "Cinta métrica",
+      "price": 13500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 68,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248298369",
+      "description": "Nivel de burbuja",
+      "price": 7000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 69,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248308082",
+      "description": "Serrucho",
+      "price": 12000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 70,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248319651",
+      "description": "Llave de tubo",
+      "price": 10000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 71,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248328653",
+      "description": "Pistola de calor",
+      "price": 25000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 72,
+      "categoryId": 6,
+      "categoryName": "Herramientas",
+      "eanCode": "7707248333589",
+      "description": "Lijadora de banda",
+      "price": 60000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 73,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248333848",
+      "description": "Manzanas",
+      "price": 2500,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 74,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248336825",
+      "description": "Plátanos",
+      "price": 1250,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 75,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248350807",
+      "description": "Naranjas",
+      "price": 2000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 76,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248357646",
+      "description": "Fresas",
+      "price": 4000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 77,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248362169",
+      "description": "Piñas",
+      "price": 2500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 78,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248363609",
+      "description": "Sandías",
+      "price": 5000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 79,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248367690",
+      "description": "Melones",
+      "price": 3500,
+      "unit": "Unidad"
+    },
+    {
+      "id": 80,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248376319",
+      "description": "Mangos",
+      "price": 2500,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 81,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248377767",
+      "description": "Uvas",
+      "price": 300,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 82,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248386516",
+      "description": "Papayas",
+      "price": 2000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 83,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248387643",
+      "description": "Kiwis",
+      "price": 6000,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 84,
+      "categoryId": 7,
+      "categoryName": "Frutas",
+      "eanCode": "7707248389180",
+      "description": "Limones",
+      "price": 1500,
+      "unit": "Kilogramo"
+    },
+    {
+      "id": 85,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248392746",
+      "description": "Anillo de oro blanco",
+      "price": 50000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 86,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248410266",
+      "description": "Aretes de plata con zirconia",
+      "price": 25000,
+      "unit": "Par"
+    },
+    {
+      "id": 87,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248417340",
+      "description": "Pulsera de perlas",
+      "price": 200000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 88,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248418330",
+      "description": "Collar de plata con dije de corazón",
+      "price": 80000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 89,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248420050",
+      "description": "Anillo de compromiso con diamante",
+      "price": 200000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 90,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248420630",
+      "description": "Aretes de oro amarillo con perlas",
+      "price": 150000,
+      "unit": "Par"
+    },
+    {
+      "id": 91,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248442823",
+      "description": "Pulsera de oro rosa con dije de inicial",
+      "price": 300000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 92,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248444063",
+      "description": "Collar de oro blanco con diamantes",
+      "price": 1000000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 93,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248486650",
+      "description": "Anillo de plata con piedra de ópalo",
+      "price": 60000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 94,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248488425",
+      "description": "Aretes de oro blanco con diamantes",
+      "price": 400000,
+      "unit": "Par"
+    },
+    {
+      "id": 95,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248494204",
+      "description": "Pulsera de oro amarillo con dijes de corazón",
+      "price": 250000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 96,
+      "categoryId": 8,
+      "categoryName": "Joyeria",
+      "eanCode": "7707248496123",
+      "description": "Collar de plata con colgante de luna",
+      "price": 40000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 97,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248499001",
+      "description": "Laptop Lenovo",
+      "price": 9000000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 98,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248501261",
+      "description": "Teléfono iPhone 13",
+      "price": 11000000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 99,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248508628",
+      "description": "Tableta Samsung Galaxy Tab S7",
+      "price": 600000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 100,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248518092",
+      "description": "Televisor LG 55 pulgadas 4K",
+      "price": 700000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 101,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248523973",
+      "description": "Auriculares inalámbricos Sony",
+      "price": 150000,
+      "unit": "Par"
+    },
+    {
+      "id": 102,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248525854",
+      "description": "Altavoz Bluetooth JBL",
+      "price": 80000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 103,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248528381",
+      "description": "Consola de videojuegos PlayStation 5",
+      "price": 500000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 104,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248533309",
+      "description": "Cámara Canon EOS R6",
+      "price": 2500000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 105,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248537314",
+      "description": "Monitor Dell 27 pulgadas",
+      "price": 400000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 106,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248538366",
+      "description": "Router WiFi TP-Link",
+      "price": 500000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 107,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248547405",
+      "description": "Disco duro externo Seagate 2TB",
+      "price": 100000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 108,
+      "categoryId": 9,
+      "categoryName": "Tecnologia",
+      "eanCode": "7707248550245",
+      "description": "Impresora HP OfficeJet Pro 9015",
+      "price": 3000000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 109,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248555172",
+      "description": "Muñeca Barbie",
+      "price": 20000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 110,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248556032",
+      "description": "Coche de carreras de control remoto",
+      "price": 50000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 111,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248559019",
+      "description": "Set de bloques de construcción LEGO",
+      "price": 30000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 112,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248565324",
+      "description": "Juego de mesa Monopoly",
+      "price": 25000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 113,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248566741",
+      "description": "Rompecabezas de 500 piezas",
+      "price": 15000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 114,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248568899",
+      "description": "Peluche de unicornio",
+      "price": 10000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 115,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248571851",
+      "description": "Set de pintura y dibujo para niños",
+      "price": 20000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 116,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248573138",
+      "description": "Libro para colorear de Disney",
+      "price": 5000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 117,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248573688",
+      "description": "Juguete de dinosaurio T-Rex",
+      "price": 15000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 118,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248579215",
+      "description": "Pelota de fútbol",
+      "price": 10000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 119,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248581799",
+      "description": "Juego de cocina de juguete",
+      "price": 30000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 120,
+      "categoryId": 10,
+      "categoryName": "Jugueteria",
+      "eanCode": "7707248590418",
+      "description": "Trompo de madera",
+      "price": 8000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 121,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248612165",
+      "description": "Bolsa de alimento para perro marca Pedigree",
+      "price": 30000,
+      "unit": "Bolsa de 7.5 kg"
+    },
+    {
+      "id": 122,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248620580",
+      "description": "Bolsa de alimento para gato marca Whiskas",
+      "price": 20000,
+      "unit": "Bolsa de 2 kg"
+    },
+    {
+      "id": 123,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248621204",
+      "description": "Juguete para perro de peluche",
+      "price": 8000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 124,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248626056",
+      "description": "Juguete para gato de cuerda",
+      "price": 5000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 125,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248627244",
+      "description": "Cama para mascota tamaño mediano",
+      "price": 50000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 126,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248629408",
+      "description": "Collar para perro ajustable",
+      "price": 15000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 127,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248631371",
+      "description": "Correa para perro de cuero",
+      "price": 20000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 128,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248631388",
+      "description": "Arena para gato marca Tidy Cats",
+      "price": 10000,
+      "unit": "Bolsa de 4 kg"
+    },
+    {
+      "id": 129,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248638172",
+      "description": "Peine para pelo de mascota",
+      "price": 8000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 130,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248642117",
+      "description": "Champú para perro marca Hartz",
+      "price": 6000,
+      "unit": "Botella de 18 oz"
+    },
+    {
+      "id": 131,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248642278",
+      "description": "Arena de sílice para gato",
+      "price": 12000,
+      "unit": "Bolsa de 3.8 L"
+    },
+    {
+      "id": 132,
+      "categoryId": 11,
+      "categoryName": "Mascotas",
+      "eanCode": "7707248642377",
+      "description": "Comedero para mascota con base antideslizante",
+      "price": 12000,
+      "unit": "Unidad"
+    },
+    {
+      "id": 133,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248642940",
+      "description": "Zapatos de tacón alto de cuero para mujer",
+      "price": 80000,
+      "unit": "Par"
+    },
+    {
+      "id": 134,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248654561",
+      "description": "Botas de invierno impermeables para hombre",
+      "price": 120000,
+      "unit": "Par"
+    },
+    {
+      "id": 135,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248655698",
+      "description": "Sandalias de playa para mujer",
+      "price": 30000,
+      "unit": "Par"
+    },
+    {
+      "id": 136,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248656152",
+      "description": "Zapatillas deportivas para correr para hombre",
+      "price": 70000,
+      "unit": "Par"
+    },
+    {
+      "id": 137,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248657364",
+      "description": "Zapatos de vestir de cuero para hombre",
+      "price": 90000,
+      "unit": "Par"
+    },
+    {
+      "id": 138,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248673159",
+      "description": "Zapatos planos de ballet para mujer",
+      "price": 40000,
+      "unit": "Par"
+    },
+    {
+      "id": 139,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248677379",
+      "description": "Botines de cuero con cordones para hombre",
+      "price": 100000,
+      "unit": "Par"
+    },
+    {
+      "id": 140,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248681277",
+      "description": "Zapatos de tacón bajo de charol para mujer",
+      "price": 60000,
+      "unit": "Par"
+    },
+    {
+      "id": 141,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248696363",
+      "description": "Zapatillas de deporte para mujer",
+      "price": 50000,
+      "unit": "Par"
+    },
+    {
+      "id": 142,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248700633",
+      "description": "Zapatos casuales de lona para hombre",
+      "price": 35000,
+      "unit": "Par"
+    },
+    {
+      "id": 143,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248703382",
+      "description": "Botas de cuero con hebilla para mujer",
+      "price": 70000,
+      "unit": "Par"
+    },
+    {
+      "id": 144,
+      "categoryId": 12,
+      "categoryName": "Zapatos",
+      "eanCode": "7707248708103",
+      "description": "Zapatos de tacón medio de ante para mujer",
+      "price": 70000,
+      "unit": "Par"
+    }
+  ]
+}
