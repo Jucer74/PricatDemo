@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PricatMVC.App.Models;
+using PricatMVC.Application.Interfaces;
+using PricatMVC.Domain.Entities;
+using System.Runtime.InteropServices;
 
 namespace PricatMVC.App.Controllers;
 
@@ -7,14 +10,15 @@ public class UsersController : Controller
 {
     #region Global-Variables
 
-    private static List<User> userList = LoadUsers();
+    private readonly IUserService<User> _userService;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
     #endregion Global-Variables
 
-    public UsersController(IHttpContextAccessor httpContextAccessor)
+    public UsersController(IHttpContextAccessor httpContextAccessor, IUserService<User> userService)
     {
         _httpContextAccessor = httpContextAccessor;
+        _userService = userService;
     }
 
     // GET: UsersController/Login
@@ -26,25 +30,20 @@ public class UsersController : Controller
     // POST: UsersController/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Login(User user)
+    public async Task<IActionResult> Login(User user)
     {
-        try
-        {
-            if (!IsValidUser(user))
-            {
-                ModelState.AddModelError(string.Empty, "Usuario o Contraseña incorrectos");
-                return View(user);
-            }
+        User userFound = await _userService.Login(user);
 
-            // Store the Name in session
-            HttpContext.Session.SetString("FullUserName", GetFullUserName(user));
-
-            return RedirectToAction(nameof(Index), "Home");
-        }
-        catch
+        if (!IsValidUser(user, userFound))
         {
-            return View();
+            ModelState.AddModelError(string.Empty, "User or Password are invalid");
+            return View(user);
         }
+
+        // Store the Name in session
+        HttpContext.Session.SetString("FullUserName", GetFullUserName(userFound));
+
+        return RedirectToAction(nameof(Index), "Home");
     }
 
     // GET: UsersController/Register
@@ -56,66 +55,30 @@ public class UsersController : Controller
     // POST: UsersController/Register
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Register(User user)
+    public async Task<IActionResult> Register(User user)
     {
-        try
-        {
-            User userFound = FindUserByUserEmail(user.UserEmail, userList);
-            if (userFound != null)
-            {
-                ModelState.AddModelError(string.Empty, "Usuario Ya Existe");
-                return View(user);
-            }
+        User userFound = await _userService.Login(user);
 
-            userList.Add(user);
-
-            return RedirectToAction(nameof(Login));
-        }
-        catch
+        if (userFound is not null)
         {
-            return View();
+            ModelState.AddModelError(string.Empty, "The User Exists");
+            return View(user);
         }
+
+        await _userService.Register(user);
+
+        return RedirectToAction(nameof(Login));
     }
 
     #region Private-Methods
 
-    private static List<User> LoadUsers()
+    private bool IsValidUser(User user, User userFound)
     {
-        List<User> users = new List<User>();
-
-        users.Add(new User() { Id = 1, UserEmail = "Admin@email.com", FirstName = "Admin", LastName = "User", Password = "P4ssw0rd*01" });
-
-        return users;
+        return (userFound is not null) && userFound.Password.Equals(user.Password);
     }
 
-    private bool IsValidUser(User user)
+    private string GetFullUserName(User userFound)
     {
-        User userFound = FindUserByUserEmail(user.UserEmail, userList);
-
-        if (userFound != null)
-        {
-            return userFound.Password.Equals(user.Password);
-        }
-
-        return false;
-    }
-
-    private User FindUserByUserEmail(string userEmail, List<User> users)
-    {
-        User user = null!;
-
-        if (!string.IsNullOrEmpty(userEmail))
-        {
-            user = users.FirstOrDefault(x => userEmail.Equals(x.UserEmail, StringComparison.OrdinalIgnoreCase)) ?? null!;
-        }
-
-        return user;
-    }
-
-    private string GetFullUserName(User user)
-    {
-        User userFound = FindUserByUserEmail(user.UserEmail, userList);
-
         if (userFound != null)
         {
             return string.Format("{0} {1}", userFound.FirstName, userFound.LastName);

@@ -1,38 +1,48 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PricatMVC.App.Models;
-using PricatMVC.App.Services;
+using PricatMVC.Application.Interfaces;
+using PricatMVC.Domain.Entities;
 
 namespace PricatMVC.App.Controllers
 {
     public class CategoriesController : Controller
     {
-        private readonly CategoryService _categoryService;
+        private readonly ICategoryService _categoryService;
+        private readonly IProductService _productService;
 
-        public CategoriesController(CategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService, IProductService productService)
         {
             _categoryService = categoryService;
+            _productService = productService;
         }
 
         // GET: CategoriesController
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var categoryList = _categoryService.GetAll();
+            var categoryList = await _categoryService.GetAll();
             return View(categoryList);
         }
 
         // GET: CategoriesController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var categoryFound = _categoryService.GetById(id);
+            var categoryFound = await _categoryService.GetById(id);
 
             if (categoryFound == null)
             {
                 return NotFound();
             }
 
-            var productsByCategory = _categoryService.GetProductsByCategory(id);
+            var productsByCategoryId = await _productService.GetProductsByCategory(id);
 
             //return RedirectToAction(nameof(Index), "products");
+
+            ProductsByCategory productsByCategory = new()
+            {
+                CategoryInfo = categoryFound,
+                Products = productsByCategoryId.ToList(),
+            };
+
 
             return View(productsByCategory);
         }
@@ -46,27 +56,20 @@ namespace PricatMVC.App.Controllers
         // POST: CategoriesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Category category)
+        public async Task<IActionResult> Create(Category category)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    _categoryService.Create(category);
-                }
+                await _categoryService.Create(category);
+            }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: CategoriesController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var categoryFound = _categoryService.GetById(id);
+            var categoryFound = await _categoryService.GetById(id);
 
             if (categoryFound == null)
             {
@@ -79,36 +82,29 @@ namespace PricatMVC.App.Controllers
         // POST: CategoriesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Category category)
+        public async Task<IActionResult> Edit(Category category)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var categoryFound = await _categoryService.GetById(category.Id);
+
+                if (categoryFound == null)
                 {
-                    var categoryFound = _categoryService.GetById(category.Id);
-
-                    if (categoryFound == null)
-                    {
-                        return View();
-                    }
-
-                    _categoryService.Edit(category);
-
-                    return RedirectToAction(nameof(Index));
+                    return View();
                 }
 
-                return View(category);
+                await _categoryService.Edit(category);
+
+                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(category);
         }
 
         // GET: CategoriesController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var categoryFound = _categoryService.GetById(id);
+            var categoryFound = await _categoryService.GetById(id);
 
             if (categoryFound == null)
             {
@@ -121,25 +117,18 @@ namespace PricatMVC.App.Controllers
         // POST: CategoriesController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Category category)
+        public async Task<IActionResult> Delete(Category category)
         {
-            try
+            var categoryFound = await _categoryService.GetById(category.Id);
+
+            if (categoryFound == null)
             {
-                var categoryFound = _categoryService.GetById(category.Id);
-
-                if (categoryFound == null)
-                {
-                    return NotFound();
-                }
-
-                _categoryService.Delete(category.Id);
-
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+
+            await _categoryService.Delete(category.Id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

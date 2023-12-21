@@ -1,4 +1,6 @@
-﻿namespace PricatMVC.App.Models;
+﻿using PricatMVC.Domain.Entities;
+
+namespace PricatMVC.App.Models;
 
 public class ProductsByCategory
 {

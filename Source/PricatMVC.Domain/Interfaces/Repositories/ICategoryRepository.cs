@@ -5,4 +5,5 @@ namespace PricatMVC.Domain.Interfaces.Repositories;
 
 public interface ICategoryRepository : IRepository<Category>
 {
+
 }

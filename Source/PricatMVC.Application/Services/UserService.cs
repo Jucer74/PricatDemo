@@ -1,17 +1,26 @@
 ﻿using PricatMVC.Application.Interfaces;
 using PricatMVC.Domain.Entities;
+using PricatMVC.Domain.Exceptions;
+using PricatMVC.Domain.Interfaces.Repositories;
 
 namespace PricatMVC.Application.Services;
 
 public class UserService : IUserService<User>
 {
-    public Task<User> Login(User model)
+    private readonly IUserRepository _userRepository;
+
+    public UserService(IUserRepository userRepository)
     {
-        throw new NotImplementedException();
+        _userRepository = userRepository;
     }
 
-    public Task<User> Register(User model)
+    public async Task<User> Login(User model)
     {
-        throw new NotImplementedException();
+        return await _userRepository.FindByEmailAsync(model.UserEmail);
+    }
+
+    public async Task<User> Register(User model)
+    {
+        return await _userRepository.AddAsync(model);
     }
 }

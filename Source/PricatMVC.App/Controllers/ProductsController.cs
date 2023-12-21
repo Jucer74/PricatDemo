@@ -1,29 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PricatMVC.App.Interfaces;
-using PricatMVC.App.Models;
+using PricatMVC.Application.Interfaces;
+using PricatMVC.Domain.Entities;
 
 namespace PricatMVC.App.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IService<Product> _productService;
+        private readonly IProductService _productService;
 
-        public ProductsController(IService<Product> productService)
+        public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
         // GET: ProductsController
-        public ActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var productList = _productService.GetAll();
+            var productList = await _productService.GetAll();
             return View(productList);
         }
 
         // GET: ProductsController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var productFound = _productService.GetById(id);
+            var productFound = await _productService.GetById(id);
 
             if (productFound == null)
             {
@@ -42,27 +42,20 @@ namespace PricatMVC.App.Controllers
         // POST: ProductsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product)
+        public async Task<IActionResult> Create(Product product)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    _productService.Create(product);
-                }
+                await _productService.Create(product);
+            }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: ProductsController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var productFound = _productService.GetById(id);
+            var productFound = await _productService.GetById(id);
 
             if (productFound == null)
             {
@@ -75,36 +68,29 @@ namespace PricatMVC.App.Controllers
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
+        public async Task<IActionResult> Edit(Product product)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var productFound = await _productService.GetById(product.Id);
+
+                if (productFound == null)
                 {
-                    var productFound = _productService.GetById(product.Id);
-
-                    if (productFound == null)
-                    {
-                        return View();
-                    }
-
-                    _productService.Edit(product);
-
-                    return RedirectToAction(nameof(Index));
+                    return View();
                 }
 
-                return View(product);
+                await _productService.Edit(product);
+
+                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(product);
         }
 
         // GET: ProductsController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var productFound = _productService.GetById(id);
+            var productFound = await _productService.GetById(id);
 
             if (productFound == null)
             {
@@ -117,25 +103,18 @@ namespace PricatMVC.App.Controllers
         // POST: ProductsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Product product)
+        public async Task<IActionResult> Delete(Product product)
         {
-            try
+            var productFound = await _productService.GetById(product.Id);
+
+            if (productFound == null)
             {
-                var productFound = _productService.GetById(product.Id);
-
-                if (productFound == null)
-                {
-                    return NotFound();
-                }
-
-                _productService.Delete(product.Id);
-
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
+
+            await _productService.Delete(product.Id);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

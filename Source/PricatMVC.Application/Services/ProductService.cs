@@ -1,38 +1,75 @@
 ﻿using PricatMVC.Application.Interfaces;
 using PricatMVC.Domain.Dtos;
 using PricatMVC.Domain.Entities;
+using PricatMVC.Domain.Exceptions;
+using PricatMVC.Domain.Interfaces.Repositories;
 
 namespace PricatMVC.Application.Services;
 
 public class ProductService : IProductService
 {
-    public Task<Product> Create(Product model)
+    private readonly IProductRepository _productRepository;
+
+    public ProductService(IProductRepository productRepository)
     {
-        throw new NotImplementedException();
+        _productRepository = productRepository;
     }
 
-    public Task Delete(int id)
+    public async Task<Product> Create(Product model)
     {
-        throw new NotImplementedException();
+        return await _productRepository.AddAsync(model);
     }
 
-    public Task<Product> Edit(Product model)
+    public async  Task Delete(int id)
     {
-        throw new NotImplementedException();
+        var original = await _productRepository.GetByIdAsync(id);
+
+        if (original is not null)
+        {
+            await _productRepository.RemoveAsync(original);
+            return;
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<IEnumerable<Product>> GetAll()
+    public async Task<Product> Edit(Product model)
     {
-        throw new NotImplementedException();
+        var id = model.Id;
+        var original = await _productRepository.GetByIdAsync(id);
+
+        if (original is not null)
+        {
+            return await _productRepository.UpdateAsync(model);
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<Product> GetById(int id)
+    public async Task<IEnumerable<Product>> GetAll()
     {
-        throw new NotImplementedException();
+        return await _productRepository.GetAllAsync();
+    }
+
+    public async Task<Product> GetById(int id)
+    {
+        var current = await _productRepository.GetByIdAsync(id);
+
+        if (current is not null)
+        {
+            return current;
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
     public Task<QueryResult<Product>> GetByPage(int page, int limit)
     {
         throw new NotImplementedException();
+    }
+
+    public async Task<IEnumerable<Product>> GetProductsByCategory(int categoryId)
+    {
+        return await _productRepository.FindAsync(p => p.CategoryId == categoryId);
     }
 }

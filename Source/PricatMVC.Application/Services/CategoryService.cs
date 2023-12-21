@@ -1,38 +1,71 @@
 ﻿using PricatMVC.Application.Interfaces;
 using PricatMVC.Domain.Dtos;
 using PricatMVC.Domain.Entities;
+using PricatMVC.Domain.Exceptions;
+using PricatMVC.Domain.Interfaces.Repositories;
 
 namespace PricatMVC.Application.Services;
 
 public class CategoryService : ICategoryService
 {
-    public Task<Category> Create(Category model)
+    private readonly ICategoryRepository _categoryRepository;
+
+    public CategoryService(ICategoryRepository categoryRepository)
     {
-        throw new NotImplementedException();
+        _categoryRepository = categoryRepository;
     }
 
-    public Task Delete(int id)
+    public async Task<Category> Create(Category model)
     {
-        throw new NotImplementedException();
+        return await _categoryRepository.AddAsync(model);
     }
 
-    public Task<Category> Edit(Category model)
+    public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        var original = await _categoryRepository.GetByIdAsync(id);
+
+        if (original is not null)
+        {
+            await _categoryRepository.RemoveAsync(original);
+            return;
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<IEnumerable<Category>> GetAll()
+    public async Task<Category> Edit(Category model)
     {
-        throw new NotImplementedException();
+        var id = model.Id;
+        var original = await _categoryRepository.GetByIdAsync(id);
+
+        if (original is not null)
+        {
+            return await _categoryRepository.UpdateAsync(model);
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<Category> GetById(int id)
+    public async Task<IEnumerable<Category>> GetAll()
     {
-        throw new NotImplementedException();
+        return await _categoryRepository.GetAllAsync();
+    }
+
+    public async Task<Category> GetById(int id)
+    {
+        var current= await _categoryRepository.GetByIdAsync(id);
+
+        if (current is not null)
+        {
+            return current;
+        }
+
+        throw new NotFoundException($"The Id={id} Not Found");
     }
 
     public Task<QueryResult<Category>> GetByPage(int page, int limit)
     {
         throw new NotImplementedException();
     }
+
 }
