@@ -1,3 +1,7 @@
+-- Clean Users
+DELETE FROM Users WHERE Id >= 0;
+DELETE FROM sqlite_sequence WHERE name='Users';
+
 -- Clean Products
 DELETE FROM Products WHERE Id >= 0;
 DELETE FROM sqlite_sequence WHERE name='Products';
@@ -5,6 +9,9 @@ DELETE FROM sqlite_sequence WHERE name='Products';
 -- Clean Categories
 DELETE FROM Categories WHERE Id >= 0;
 DELETE FROM sqlite_sequence WHERE name='Categories';
+
+-- Insert Users
+INSERT INTO Users(UserEmail, FirstName, LastName, Password) VALUES ('Admin@email.com', 'Admin', 'User', 'P4ssw0rd*01');
 
 -- Insert Categories
 INSERT INTO Categories(`Description`) VALUES('Alimentos');
