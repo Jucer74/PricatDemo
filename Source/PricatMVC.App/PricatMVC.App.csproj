@@ -33,4 +33,14 @@
     <ProjectReference Include="..\PricatMVC.Infrastructure\PricatMVC.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database\PricatDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo &quot;Copying the Initital Database&quot;&#xD;&#xA;XCopy /Y &quot;..\..\Database\PricatDB.db&quot; &quot;$(ProjectDir)Database&quot;" />
+  </Target>
+
 </Project>
