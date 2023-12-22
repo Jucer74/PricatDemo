@@ -14,5 +14,5 @@ public interface IService<TModel> where TModel : class
 
     public Task<TModel> GetById(int id);
 
-    public Task<QueryResult<TModel>> GetByPage(int page, int limit);
+    public Task<QueryResult<TModel>> GetByQueryRequest(QueryRequest queryRequest);
 }

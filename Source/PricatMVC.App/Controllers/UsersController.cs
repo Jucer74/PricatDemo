@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PricatMVC.App.Models;
 using PricatMVC.Application.Interfaces;
 using PricatMVC.Domain.Entities;
-using System.Runtime.InteropServices;
 
 namespace PricatMVC.App.Controllers;
 

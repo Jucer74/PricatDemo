@@ -3,5 +3,5 @@
 public class QueryResult<TModel>
 {
     public List<TModel> Items { get; set; } = new List<TModel>();
-    public PaginationData Pagination { get; set; } = new PaginationData();
+    public PaginationData PaginationData { get; set; } = new PaginationData();
 }

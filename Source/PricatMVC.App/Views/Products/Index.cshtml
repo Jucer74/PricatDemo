@@ -1,34 +1,47 @@
-﻿@model IEnumerable<PricatMVC.Domain.Entities.Product>
+﻿@using PricatMVC.Domain.Dtos
+@model IEnumerable<PricatMVC.Domain.Entities.Product>
 
 @{
-    ViewData["Title"] = "Productos";
+    ViewData["Title"] = "Products";
+    PaginationData paginationData = (ViewData["PaginationData"] as PaginationData)!;
 }
 
-<h1>Productos</h1>
+<h1>Products</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-success" title="Adicionar"><i class="bi bi-plus-lg"></i></a>
+    <a asp-action="Create" class="btn btn-success" title="Create"><i class="bi bi-plus-lg"></i></a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Search by : <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input class="btn btn-primary" type="submit" value="Search" />
+            <a class="btn btn-outline-secondary" asp-action="Index" title="Clear">Clear</a>
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IdSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@Html.DisplayNameFor(model => model.Id)</a>
             </th>
             <th>
-                Imagen
+                Image
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DescriptionSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@Html.DisplayNameFor(model => model.Description)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EanCode)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["EanCodeSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@Html.DisplayNameFor(model => model.EanCode)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@Html.DisplayNameFor(model => model.Price)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["UnitSort"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@Html.DisplayNameFor(model => model.Unit)</a>
             </th>
             <th></th>
         </tr>
@@ -57,11 +70,26 @@
                 @Html.DisplayFor(modelItem => item.Unit)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id" title="Editar"><i class="bi bi-pencil-fill"></i></a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" title="Eliminar"><i class="bi bi-trash"></i></a>
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id" title="Detalles"><i class="bi bi-card-list"></i></a>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" title="Delete"><i class="bi bi-trash"></i></a>
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id" title="Details"><i class="bi bi-card-list"></i></a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@paginationData.PreviousPage"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-outline-dark">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@paginationData.NextPage"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-outline-dark">
+    Next
+</a>

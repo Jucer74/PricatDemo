@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PricatMVC.App.Models;
 using PricatMVC.Application.Interfaces;
+using PricatMVC.Domain.Dtos;
 using PricatMVC.Domain.Entities;
 
 namespace PricatMVC.App.Controllers
@@ -17,10 +18,45 @@ namespace PricatMVC.App.Controllers
         }
 
         // GET: CategoriesController
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? sortOrder=null, string? currentFilter= null, string? searchString=null, int? pageNumber=null)
         {
-            var categoryList = await _categoryService.GetAll();
+
+            //if(string.IsNullOrEmpty(sortOrder))
+            //{
+            //    var categoryList = await _categoryService.GetAll();
+            //    ViewData["DescriptionSort"] = "Description";
+            //    return View(categoryList);
+            //}
+
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["IdSort"] = string.IsNullOrEmpty(sortOrder)  ? "Id_DESC": string.Empty;
+            ViewData["DescriptionSort"] = sortOrder == "Description" ? "Description_DESC" : "Description";
+            ViewData["CurrentFilter"] = searchString;
+
+            if (string.IsNullOrEmpty(searchString))
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+
+            int currentPage = pageNumber ?? 1;
+            ViewData["CurrentPage"]= currentPage;
+
+            QueryRequest queryRequest = new QueryRequest()
+            {
+                CurrentPage = currentPage,
+                SortOrder = sortOrder,
+                SearchString = searchString
+            };
+
+
+            QueryResult<Category> queryResult= await _categoryService.GetByQueryRequest(queryRequest);
+            var categoryList = queryResult.Items;
+
+            ViewData["PaginationData"] = queryResult.PaginationData;
+
             return View(categoryList);
+
         }
 
         // GET: CategoriesController/Details/5

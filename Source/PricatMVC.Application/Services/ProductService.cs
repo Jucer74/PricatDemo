@@ -63,9 +63,9 @@ public class ProductService : IProductService
         throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<QueryResult<Product>> GetByPage(int page, int limit)
+    public async Task<QueryResult<Product>> GetByQueryRequest(QueryRequest queryRequest)
     {
-        throw new NotImplementedException();
+        return await _productRepository.GetByQueryRequest(queryRequest);
     }
 
     public async Task<IEnumerable<Product>> GetProductsByCategory(int categoryId)

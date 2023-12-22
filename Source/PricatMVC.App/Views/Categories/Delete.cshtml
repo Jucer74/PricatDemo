@@ -1,12 +1,12 @@
 ﻿@model PricatMVC.Domain.Entities.Category
 
 @{
-    ViewData["Title"] = "Eliminar";
+    ViewData["Title"] = "Delete";
 }
 
-<h1>Eliminar</h1>
+<h1>Delete</h1>
 
-<h3>Esta seguro de eliminar este registro?</h3>
+<h3>Are you sure to delete this record?</h3>
 <div>
     <h4>Categoria</h4>
     <hr />
@@ -27,8 +27,8 @@
     
     <form asp-action="Delete">
         <div class="form-group">
-            <button class="btn btn-primary" type="submit" title="Aceptar"><i class="bi bi-check-lg"></i></button>
-            <a class="btn btn-secondary" asp-action="Index" title="Volver"><i class="bi bi-x-lg"></i></a>
+            <button class="btn btn-primary" type="submit" title="Ok"><i class="bi bi-check-lg"></i></button>
+            <a class="btn btn-secondary" asp-action="Index" title="Back"><i class="bi bi-x-lg"></i></a>
         </div>
     </form>
 

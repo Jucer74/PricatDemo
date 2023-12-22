@@ -18,20 +18,20 @@
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group mt-2">
-                        <label asp-for="UserEmail" class="control-label">Usuario :</label>
+                        <label asp-for="UserEmail" class="control-label"></label>
                         <input asp-for="UserEmail" type="email" class="form-control" placeholder="john.doe@email.com" required autofocus>
                         <span asp-validation-for="UserEmail" class="text-danger"></span>
                     </div>
                     <div class="form-group mt-2">
-                        <label asp-for="Password">Contraseña :</label>
+                        <label asp-for="Password"></label>
                         <input asp-for="Password" type="password" class="form-control" placeholder="Password" required>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="text-center">
-                        <button id="btbLogin" class="mt-2 btn btn-lg btn-primary w-50" type="submit">Ingresar</button>
+                        <button id="btbLogin" class="mt-2 btn btn-lg btn-primary w-50" type="submit">Login</button>
                     </div>
                 </form>
-                <a asp-action="Register" class="mt-2 d-block text-center">Registrar</a>
+                <a asp-action="Register" class="mt-2 d-block text-center">Register</a>
             </div>
         </div>
     </div>

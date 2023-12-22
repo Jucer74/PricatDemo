@@ -63,9 +63,8 @@ public class CategoryService : ICategoryService
         throw new NotFoundException($"The Id={id} Not Found");
     }
 
-    public Task<QueryResult<Category>> GetByPage(int page, int limit)
+    public async Task<QueryResult<Category>> GetByQueryRequest(QueryRequest queryRequest)
     {
-        throw new NotImplementedException();
+        return await _categoryRepository.GetByQueryRequest(queryRequest); 
     }
-
 }

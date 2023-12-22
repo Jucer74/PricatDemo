@@ -1,7 +1,12 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using Microsoft.EntityFrameworkCore;
 using PricatMVC.App.Extensions;
+using PricatMVC.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add Context
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Name=CnnStr"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
