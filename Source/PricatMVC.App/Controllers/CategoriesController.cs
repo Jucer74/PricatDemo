@@ -83,6 +83,29 @@ namespace PricatMVC.App.Controllers
             return View(productsByCategory);
         }
 
+        public async Task<IActionResult> PartialDetails(int id)
+        {
+            var categoryFound = await _categoryService.GetById(id);
+
+            if (categoryFound == null)
+            {
+                return NotFound();
+            }
+
+            var productsByCategoryId = await _productService.GetProductsByCategory(id);
+
+            //return RedirectToAction(nameof(Index), "products");
+
+            ProductsByCategory productsByCategory = new()
+            {
+                CategoryInfo = categoryFound,
+                Products = productsByCategoryId.ToList(),
+            };
+
+
+            return PartialView(productsByCategory);
+        }
+
         // GET: CategoriesController/Create
         public ActionResult Create()
         {

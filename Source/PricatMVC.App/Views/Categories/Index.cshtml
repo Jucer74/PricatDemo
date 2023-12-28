@@ -6,7 +6,7 @@
     PaginationData paginationData = (ViewData["PaginationData"] as PaginationData)!;
 }
 
-<h1>Categorias</h1>
+<h1>Categories</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-success" title="Create"><i class="bi bi-plus-lg"></i></a>
@@ -47,6 +47,7 @@
                 <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id" title="Edit"><i class="bi bi-pencil-fill"></i></a>
                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" title="Delete"><i class="bi bi-trash"></i></a>
                 <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id" title="Products"><i class="bi bi-box-seam"></i></a>
+                <a class="btn btn-warning" onclick="showDetails(@item.Id)" title="Products"><i class="bi bi-info"></i></a>
             </td>
         </tr>
 }
@@ -67,3 +68,19 @@
    class="btn btn-outline-dark">
     Next
 </a>
+
+<div id="details">
+</div>
+
+@section Scripts
+{
+    <script>
+        function showDetails(id) {
+            var url = "/categories/partialdetails";
+            $.get(url, { id: id })
+                .done(function (response) {
+                    $("#details").html(response);
+                });
+        }
+    </script>
+}
